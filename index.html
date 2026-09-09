@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>你的名字｜教育系學生作品集</title>
+
+  <style>
+    /* =========================
+       基本設定
+    ========================= */
+
+    :root {
+      --bg: #f6f5f1;
+      --white: #ffffff;
+      --text: #1e2523;
+      --gray: #6e7672;
+      --line: #dfe2dc;
+      --green: #667b70;
+      --dark-green: #405249;
+
+      --max-width: 1180px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: calc(100% - 48px);
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       導覽列
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(246, 245, 241, 0.92);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+
+    /* =========================
+       首頁
+    ========================= */
+
+    .hero {
+      min-height: calc(100vh - 72px);
+
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+
+      align-items: center;
+
+      gap: 80px;
+
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--green);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 88px);
+
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+
+      font-weight: 700;
+    }
+
+    .hero-description {
+      max-width: 620px;
+
+      margin-top: 30px;
+
+      color: var(--gray);
+
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px 21px;
+
+      border-radius: 999px;
+
+      border: 1px solid var(--text);
+
+      font-size: 14px;
+
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: white;
+    }
+
+
+    /* =========================
+       個人照片
+    ========================= */
+
+    .profile-image {
+      aspect-ratio: 4 / 5;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(102, 123, 112, 0.18),
+          rgba(255, 255, 255, 0.5)
+        ),
+        #d9ddd6;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: var(--gray);
+
+      overflow: hidden;
+    }
+
+    .profile-placeholder {
+      border: 1px dashed #aab2ac;
+
+      padding: 10px 18px;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       Section
+    ========================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      font-size: 36px;
+
+      line-height: 1.2;
+
+      letter-spacing: -0.04em;
+    }
+
+    .section-description {
+      max-width: 430px;
+
+      color: var(--gray);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       About
+    ========================= */
+
+    .about {
+      border-top: 1px solid var(--line);
+
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 70px;
+    }
+
+    .about-text {
+      padding-top: 30px;
+
+      font-size: 20px;
+
+      line-height: 1.8;
+    }
+
+    .about-info {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 26px;
+
+      padding-top: 30px;
+    }
+
+    .info-item {
+      padding-top: 16px;
+
+      border-top: 1px solid var(--line);
+
+      font-size: 15px;
+    }
+
+    .info-label {
+      display: block;
+
+      color: var(--gray);
+
+      font-size: 13px;
+
+      margin-bottom: 6px;
+    }
+
+
+    /* =========================
+       作品集
+    ========================= */
+
+    .works {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--white);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      overflow: hidden;
+
+      transition: 0.25s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 18px 50px rgba(30, 37, 35, 0.08);
+    }
+
+    .work-image {
+      aspect-ratio: 16 / 9;
+
+      background: #e4e7e1;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: var(--gray);
+
+      font-size: 13px;
+    }
+
+    .work-content {
+      padding: 24px;
+    }
+
+    .work-tag {
+      display: inline-block;
+
+      color: var(--dark-green);
+
+      background: #edf0eb;
+
+      border-radius: 999px;
+
+      padding: 5px 11px;
+
+      font-size: 12px;
+
+      margin-bottom: 12px;
+    }
+
+    .work-title {
+      font-size: 21px;
+
+      margin-bottom: 8px;
+    }
+
+    .work-description {
+      color: var(--gray);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       經歷
+    ========================= */
+
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      display: grid;
+
+      grid-template-columns: 150px 1fr;
+
+      gap: 30px;
+
+      padding: 28px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-date {
+      color: var(--gray);
+
+      font-size: 13px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+
+      margin-bottom: 6px;
+    }
+
+    .timeline-description {
+      color: var(--gray);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       技能
+    ========================= */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 50px;
+    }
+
+    .skill {
+      background: var(--white);
+
+      border: 1px solid var(--line);
+
+      padding: 9px 15px;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       聯絡
+    ========================= */
+
+    .contact-box {
+      background: var(--text);
+
+      color: white;
+
+      border-radius: 28px;
+
+      padding: 70px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .contact-title {
+      font-size: clamp(38px, 5vw, 64px);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .contact-description {
+      color: #c7ceca;
+
+      margin-top: 12px;
+    }
+
+    .contact-email {
+      border-color: white;
+
+      color: white;
+
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      padding: 35px 0;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      color: var(--gray);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       手機版
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 15vw, 70px);
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 12px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .about-info {
+        padding-top: 0;
+      }
+
+      .works {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+      }
+
+      .contact-box {
+        display: block;
+
+        padding: 40px 28px;
+      }
+
+      .contact-email {
+        margin-top: 28px;
+      }
+
+      footer {
+        display: block;
+      }
+
+      footer span {
+        display: block;
+
+        margin-top: 8px;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a:nth-child(n+3) {
+        display: none;
+      }
+
+      .about-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       導覽列
+  ========================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="#top" class="logo">
+          YOUR NAME.
+        </a>
+
+        <div class="nav-links">
+
+          <a href="#about">
+            關於我
+          </a>
+
+          <a href="#works">
+            作品
+          </a>
+
+          <a href="#experience">
+            經歷
+          </a>
+
+          <a href="#contact">
+            聯絡
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main id="top">
+
+
+    <!-- =========================
+         Hero 首頁
+    ========================== -->
+
+    <div class="container">
+
+      <section class="hero">
+
+        <div>
+
+          <div class="eyebrow">
+            Education · Portfolio
+          </div>
+
+          <h1>
+            用教育，<br>
+            理解一個人。
+          </h1>
+
+          <p class="hero-description">
+
+            我是「你的名字」，教育系學生。
+            關注學習、教學與人的成長，
+            喜歡把課堂中的觀察轉化成具體的教育實踐。
+
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#works"
+               class="button button-primary">
+
+              查看作品
+
+            </a>
+
+            <a href="#about"
+               class="button">
+
+              認識我
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- 個人照片 -->
+
+        <div class="profile-image">
+
+          <span class="profile-placeholder">
+            放入你的個人照片
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- =========================
+         About Me
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2 class="section-title">
+            About me
+          </h2>
+
+          <p class="section-description">
+
+            簡單介紹你的學習方向、
+            教育理念，以及你希望成為怎樣的教育工作者。
+
+          </p>
+
+        </div>
+
+
+        <div class="about">
+
+          <div class="about-text">
+
+            <p>
+
+              我相信教育不只是「教會學生」，
+              更重要的是理解學生如何學習。
+
+              在大學期間，我透過課程、實習、
+              教學活動與專題研究，
+              持續探索教育與真實世界之間的連結。
+
+            </p>
+
+          </div>
+
+
+          <div class="about-info">
+
+            <div class="info-item">
+
+              <span class="info-label">
+                學校
+              </span>
+
+              國立○○大學
+
+            </div>
+
+
+            <div class="info-item">
+
+              <span class="info-label">
+                系所
+              </span>
+
+              教育學系
+
+            </div>
+
+
+            <div class="info-item">
+
+              <span class="info-label">
+                興趣
+              </span>
+
+              教學設計／兒童教育／教育科技
+
+            </div>
+
+
+            <div class="info-item">
+
+              <span class="info-label">
+                目前身份
+              </span>
+
+              教育系學生
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         作品集
+    ========================== -->
+
+    <section id="works">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2 class="section-title">
+            Selected works
+          </h2>
+
+          <p class="section-description">
+
+            挑選最能代表你的課程成果、
+            教案、研究、活動與實習作品。
+
+          </p>
+
+        </div>
+
+
+        <div class="works">
+
+
+          <!-- 作品一 -->
+
+          <article class="work-card">
+
+            <div class="work-image">
+              作品封面／照片
+            </div>
+
+            <div class="work-content">
+
+              <span class="work-tag">
+                教學設計
+              </span>
+
+              <h3 class="work-title">
+                國小閱讀課程設計
+              </h3>
+
+              <p class="work-description">
+
+                以學生閱讀理解與討論能力為核心，
+                設計完整教學流程、學習單與評量方式。
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- 作品二 -->
+
+          <article class="work-card">
+
+            <div class="work-image">
+              作品封面／照片
+            </div>
+
+            <div class="work-content">
+
+              <span class="work-tag">
+                教育研究
+              </span>
+
+              <h3 class="work-title">
+                數位學習專題研究
+              </h3>
+
+              <p class="work-description">
+
+                探討數位工具如何影響學生的學習動機，
+                整理研究資料並提出教育現場的應用建議。
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- 作品三 -->
+
+          <article class="work-card">
+
+            <div class="work-image">
+              作品封面／照片
+            </div>
+
+            <div class="work-content">
+
+              <span class="work-tag">
+                活動企劃
+              </span>
+
+              <h3 class="work-title">
+                兒童教育活動企劃
+              </h3>
+
+              <p class="work-description">
+
+                從需求分析、活動目標到執行與反思，
+                完整呈現教育活動的規劃歷程。
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- 作品四 -->
+
+          <article class="work-card">
+
+            <div class="work-image">
+              作品封面／照片
+            </div>
+
+            <div class="work-content">
+
+              <span class="work-tag">
+                實習紀錄
+              </span>
+
+              <h3 class="work-title">
+                教育現場觀察與反思
+              </h3>
+
+              <p class="work-description">
+
+                記錄實習期間的課堂觀察、
+                師生互動，以及自己對教育工作的理解與反思。
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Experience
+    ========================== -->
+
+    <section id="experience">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2 class="section-title">
+            Experience
+          </h2>
+
+          <p class="section-description">
+
+            用時間軸呈現學習歷程，
+            比單純列履歷更容易看出你的成長。
+
+          </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-date">
+              2025 — Present
+            </div>
+
+            <div>
+
+              <h3 class="timeline-title">
+                教育系學習
+              </h3>
+
+              <p class="timeline-description">
+
+                修習教育心理學、課程設計、
+                教學原理等課程，
+                累積教學與研究基礎。
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-date">
+              2026
+            </div>
+
+            <div>
+
+              <h3 class="timeline-title">
+                教學／教育實習
+              </h3>
+
+              <p class="timeline-description">
+
+                參與教學活動與教育現場觀察，
+                將課堂所學轉化為實際經驗。
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-date">
+              2026
+            </div>
+
+            <div>
+
+              <h3 class="timeline-title">
+                專題研究
+              </h3>
+
+              <p class="timeline-description">
+
+                完成教育相關研究專題，
+                練習資料蒐集、分析與成果呈現。
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="skills">
+
+          <span class="skill">
+            教學設計
+          </span>
+
+          <span class="skill">
+            課程規劃
+          </span>
+
+          <span class="skill">
+            教育研究
+          </span>
+
+          <span class="skill">
+            簡報製作
+          </span>
+
+          <span class="skill">
+            活動企劃
+          </span>
+
+          <span class="skill">
+            學習單設計
+          </span>
+
+          <span class="skill">
+            Canva
+          </span>
+
+          <span class="skill">
+            Microsoft Office
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Contact
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <h2 class="contact-title">
+              Let's connect.
+            </h2>
+
+            <p class="contact-description">
+
+              如果你想了解我的作品、
+              教育理念或合作經驗，
+              歡迎與我聯絡。
+
+            </p>
+
+          </div>
+
+
+          <a
+            href="mailto:yourmail@example.com"
+            class="button contact-email">
+
+            yourmail@example.com
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer class="container">
+
+    <span>
+      © 2026 YOUR NAME
+    </span>
+
+    <span>
+      Education Portfolio
+    </span>
+
+  </footer>
+
+
+</body>
+</html>
